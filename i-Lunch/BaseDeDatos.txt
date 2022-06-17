@@ -1,1 +1,39 @@
+CREATE TABLE administrador(
+  tipo_id VARCHAR(2) CHECK(tipo_id IN (“CC”, “CE”, “PS”)),
+  numero_id INT(10),
+  nombres VARCHAR(50) NOT NULL,
+  apellidos VARCHAR(50) NOT NULL,
+  correo VARCHAR(50) UNIQUE NOT NULL,
+  telefono INT(10) UNIQUE NOT NULL,	
+  PRIMARY KEY (tipo_id, numero_id)
+);
 
+CREATE TABLE franquicia(
+  nit INT(10) PRIMARY KEY,
+  nombre VARCHAR(50) UNIQUE NOT NULL,
+  correo VARCHAR(50) UNIQUE NOT NULL,
+  telefono INT(10) UNIQUE NOT NULL,
+  costo_franquicia INT(10) NOT NULL CHECK(costo_franquicia > 0),
+  franquicia_duena INT(10) REFERENCES franquicia(nit),
+  administrador_tipo_id VARCHAR(2),
+  administrador_numero_id INT(10),
+  UNIQUE(administrador_tipo_id, administrador_numero_id),
+  FOREIGN KEY (administrador_tipo_id, administrador_numero_id) REFERENCES administrador(tipo_id, numero_id),
+  CHECK(franquicia_dueña <> nit)
+);
+
+CREATE TABLE restaurante(
+  nit INT(10) PRIMARY KEY,
+  nombre VARCHAR(50) NOT NULL,
+  pais VARCHAR(50) NOT NULL,
+  ciudad VARCHAR(50) NOT NULL,
+  direccion VARCHAR(50) NOT NULL,
+  correo VARCHAR(50) UNIQUE NOT NULL,
+  franquicia_duena INT(10) REFERENCES franquicia(nit),
+  abierto INT(1) NOT NULL CHECK(abierto IN (0,1)),     
+  administrador_tipo_id VARCHAR(2),
+  administrador_numero_id INT(10),
+  UNIQUE(pais, ciudad, direccion),
+  UNIQUE(nombre, franquicia_duena),
+  FOREIGN KEY (administrador_tipo_id, administrador_numero_id) REFERENCES administrador(tipo_id, numero_id)
+);

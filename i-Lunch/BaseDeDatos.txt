@@ -1,5 +1,5 @@
 CREATE TABLE administrador(
-  tipo_id VARCHAR(2) CHECK(tipo_id IN (“CC”, “CE”, “PS”)),
+  tipo_id VARCHAR(2) CHECK(tipo_id IN ("CC", "CE", "PS")),
   numero_id INT(10),
   nombres VARCHAR(50) NOT NULL,
   apellidos VARCHAR(50) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE franquicia(
   administrador_numero_id INT(10),
   UNIQUE(administrador_tipo_id, administrador_numero_id),
   FOREIGN KEY (administrador_tipo_id, administrador_numero_id) REFERENCES administrador(tipo_id, numero_id),
-  CHECK(franquicia_dueña <> nit)
+  CHECK(franquicia_duena <> nit)
 );
 
 CREATE TABLE restaurante(

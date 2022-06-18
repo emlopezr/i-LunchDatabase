@@ -1,61 +1,25 @@
 <?php
 $paginaActiva = 2;
-include "../includes/header.php"
+include "../includes/header.php";
+require "../funciones/select.php";
 ?>
 
-<div class="container mt-3">
+<div class="mt-5">
     <div class="row">
 
-        <!-- Si se envió el formulario, instertarlo en la BD -->
-        <!-- ! FALTA POR HACER -->
-        <?php if (isset($_POST["nit"])): ?>
+        <!-- Que me perdonen los dioses del desarollo web por esto que estoy a punto de hacer -->
+        <div class="col-1 px2"></div>
 
-            <div class="col-6 px-2">
+        <!-- Recibir los datos e insertarlos en la BD-->
+            <div class="col-4 px-2">
+                <!-- Contenedor -->
                 <div class="card">
-                    <div class="card-header">
-                        Editar Persona
-                    </div>
-                    <div class="card-body">
-                        <form action="update_p.php" class="form-group" method="post">
-                            <div class="form-group">
-                                <label for="cedula">Cedula</label>
-                                <input type="text" readonly name="cedula" value=<?= $_GET["cedula"]; ?> id="cedula" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Nombre</label>
-                                <input type="text" name="nombre" value='<?= $_GET["nombre"]; ?>' id="name" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Direccion</label>
-                                <input type="text" name="direccion" value='<?= $_GET["direccion"]; ?>' id="direccion" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="">Telefono</label>
-                                <input type="text" name="telefono" value=<?= $_GET["telefono"]; ?> id="telefono" class="form-control">
-                            </div>
-
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" value="Guardar">
-                                <a href="personas.php" class="btn btn-danger">descartar</a>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        
-        <!-- Si no se ha llenado el formulario, recibir los datos -->
-        <?php else: ?>
-
-            <div class="col-6 px-2">
-                <div class="card">
-
+                    <!-- Título del contenedor -->
                     <div class="card-header">
                         <b>Crear una Franquicia</b>
                     </div>
 
+                    <!-- Cuerpo del contenedor -->
                     <div class="card-body">
                         <!-- Formulario de inserción de datos -->
                         <form action="insert_franquicia.php" class="form-group" method="post">
@@ -91,7 +55,7 @@ include "../includes/header.php"
                                 <select name="franquicia" id="franquicia" class="form-control">
 
                                     <!-- Si se deja esta, se inserta un NULL -->
-                                    <option value="" selected>
+                                    <option value="NULL" selected>
                                         Ninguna
                                     </option>
 
@@ -117,6 +81,7 @@ include "../includes/header.php"
                             <div class="form-group">
                                 <label for="admin">Administradores disponibles</label>
                                 <select name="admin" id="admin" class="form-control">
+                                    
                                     <!-- Iterar sobre los admins ya creadas pero sin franquicia y ponerlos en el formulario -->
                                     <?php
                                     require("../administrador/select_admin disponible.php");
@@ -144,64 +109,75 @@ include "../includes/header.php"
                     </div>
                 </div>
             </div>
-
-        <?php endif; ?>
         
         <!-- Ver las franquicias ya creadas -->
         <div class="col-6 px-2">
-
+            <!-- Tabla de franquicias -->
             <table class="table border-rounded">
+                <!-- Cabecera de la tabla -->
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">Cedula</th>
+                        <th scope="col">NIT</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Opciones</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Costo [$USD]</th>
+                        <th scope="col">Franquicia dueña</th>
+                        <th scope="col">Administrador</th>
                         <th></th>
                     </tr>
                 </thead>
+
+                <!-- Cuerpo de la tabla -->
                 <tbody>
+                    <!-- Iterar sobre las franquicias -->
                     <?php
-                    require('select_p.php');
-                    if ($result) {
-                        foreach ($result as $fila) {
+                    require('select_franquicia.php');
+                    if ($resultFranquicia):
+                        foreach ($resultFranquicia as $fila):
                     ?>
+
+                            <!-- Fila -->
                             <tr>
-                                <td><?= $fila['cedula']; ?></td>
-                                <td><?= $fila['nombre']; ?></td>
+                                <!-- Columnas -->
+                                <td><?= $fila["nit"];?></td>
+                                <td><?= $fila["nombre"];?></td>
+                                <td><?= $fila["correo"];?></td>
+                                <td><?= $fila["telefono"];?></td>
+                                <td>$<?= $fila["costo_franquicia"];?>M</td>
 
-                                <td><?= $fila['direccion']; ?></td>
+                                <!-- Buscar nombre de la franquicia dueña -->
+                                <?php
+                                if($fila["franquicia_duena"] != NULL):
+                                    $franquiciaDuena = selectFunction("franquicia", "nit = " . $fila["franquicia_duena"]);
+                                    foreach ($franquiciaDuena as $filaFranquicia):
+                                ?>
+                                    <td><?= $filaFranquicia["nombre"];?> (NIT: <?= $filaFranquicia["nit"];?>)</td>
+                                <?php
+                                    endforeach;
+                                // Imprimir vacío si no hay franquicia dueña
+                                else:
+                                ?>
+                                    <td></td>
+                                <?php
+                                endif;
+                                ?>
 
-                                <td><?= $fila['telefono']; ?></td>
-                                <td>
-
-                                    <form action="delete_p.php" method="POST">
-                                        <input type="text" value=<?= $fila['cedula']; ?> hidden>
-                                        <input type="text" name="d" value=<?= $fila['cedula']; ?> hidden>
-                                        <button class="btn btn-danger" title="eliminar" type="submit"><i class="fas fa-trash-alt"></i></button>
-                                    </form>
-                                </td>
-                                <td class="mx-0 pr-2">
-                                    <form action="personas.php" method="GET">
-
-                                        <input type="text" name="cedula" value=<?= $fila['cedula']; ?> hidden>
-                                        <input type="text" name="nombre" value='<?= $fila['nombre']; ?>' hidden>
-                                        <input type="text" name="direccion" value='<?= $fila['direccion']; ?>' hidden>
-                                        <input type="text" name="telefono" value=<?= $fila['telefono']; ?> hidden>
-
-                                        <button class="btn btn-primary" title="editar" type="submit"><i class="far fa-edit"></i></button>
-                                    </form>
-                                </td>
-
-
+                                <!-- Buscar nombre del administrador -->
+                                <?php
+                                $administradorFranquicia = selectFunction("administrador", "tipo_id = '" . $fila["administrador_tipo_id"] . "' AND " . " numero_id = " . $fila["administrador_numero_id"]);
+                                foreach ($administradorFranquicia as $filaAdmin):
+                                ?>
+                                    <td><?= $filaAdmin["nombres"] . " " . $filaAdmin["apellidos"]?> (<?= $filaAdmin["tipo_id"] . ": ". $filaAdmin["numero_id"];?>)</td>
+                                <?php
+                                endforeach;
+                                ?>
 
                             </tr>
+
                     <?php
-
-                        }
-                    }
-
+                        endforeach;
+                    endif;
                     ?>
                 </tbody>
             </table>

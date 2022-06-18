@@ -16,12 +16,14 @@ $administrador_tipo_id = $admin[0];
 $administrador_numero_id = $admin[1];
 
 // Query SQL
-$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', '$franquicia_duena', '$administrador_tipo_id', '$administrador_numero_id')";
+// Verificar si franquicia_duena es NULL o tiene valor
+if($franquicia_duena != "NULL"):
+	$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', '$franquicia_duena', '$administrador_tipo_id', '$administrador_numero_id')";
+else:
+	$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', NULL, '$administrador_tipo_id', '$administrador_numero_id')";
+endif;
 
-echo $query;
-
-exit;
-
+// Ejecutar consulta
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
 // Redirigir al usuario a la misma pagina

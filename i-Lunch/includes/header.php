@@ -19,7 +19,7 @@ $paginaActiva;
       crossorigin="anonymous"
     />
 
-    <link rel="icon" href="/images/favicon.png">
+    <link rel="icon" href="/i-Lunch/images/favicon.png">
 
   </head>
 
@@ -27,41 +27,41 @@ $paginaActiva;
     <ul class="nav">
       <?php if ($paginaActiva == 0): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/index.php">Inicio</a>
+          <a class="nav-link active" href="/i-Lunch/index.php">Inicio</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/index.php">Inicio</a>
+          <a class="nav-link" href="/i-Lunch/index.php">Inicio</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 1): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/administrador/administrador.php">Administradores</a>
+          <a class="nav-link active" href="/i-Lunch/administrador/administrador.php">Administradores</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/administrador/administrador.php">Administradores</a>
+          <a class="nav-link" href="/i-Lunch/administrador/administrador.php">Administradores</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 2): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/franquicia/franquicia.php">Franquicias</a>
+          <a class="nav-link active" href="/i-Lunch/franquicia/franquicia.php">Franquicias</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/franquicia/franquicia.php">Franquicias</a>
+          <a class="nav-link" href="/i-Lunch/franquicia/franquicia.php">Franquicias</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 3): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/restaurante/restaurante.php">Restaurantes</a>
+          <a class="nav-link active" href="/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/restaurante/restaurante.php">Restaurantes</a>
+          <a class="nav-link" href="/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
         </li>
       <?php endif; ?> 
     </ul>

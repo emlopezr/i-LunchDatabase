@@ -14,7 +14,7 @@ require "../funciones/select.php";
             <div class="card">
                 <!-- Título del contenedor -->
                 <div class="card-header">
-                    <b>Crear un restaurante</b>
+                    <b>Crear un Restaurante</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->

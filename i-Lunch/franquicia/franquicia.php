@@ -6,12 +6,10 @@ require "../funciones/select.php";
 
 <div class="mt-5">
     <div class="row">
-
         <!-- Que me perdonen los dioses del desarollo web por esto que estoy a punto de hacer -->
         <div class="col-1 px2"></div>
-
         <!-- Recibir los datos e insertarlos en la BD-->
-            <div class="col-4 px-2">
+            <div class="col-3 px-2">
                 <!-- Contenedor -->
                 <div class="card">
                     <!-- Título del contenedor -->
@@ -111,7 +109,7 @@ require "../funciones/select.php";
             </div>
         
         <!-- Ver las franquicias ya creadas -->
-        <div class="col-6 px-2">
+        <div class="col-7 px-2">
             <!-- Tabla de franquicias -->
             <table class="table border-rounded">
                 <!-- Cabecera de la tabla -->

@@ -78,9 +78,9 @@ require "../funciones/select.php";
                                     </option>
                                     <!-- Iterar sobre los admins ya creadas pero sin franquicia y ponerlos en el formulario -->
                                     <?php
-                                    require("../administrador/select_admin_disponibleRest.php");
-                                    if ($resultAdminDisponible):
-                                        foreach ($resultAdminDisponible as $fila):
+                                    require("../administrador/select_admin.php");
+                                    if ($resultAdmin):
+                                        foreach ($resultAdmin as $fila):
                                     ?>
 
                                     <option value=<?= $fila['tipo_id'] . "|" . $fila['numero_id'];?>> <!-- Se usa el delimitador | para mandar 2 valores -->
@@ -111,9 +111,9 @@ require "../funciones/select.php";
 
                                     <!-- Iterar sobre las franquicias ya creadas y ponerlas en el formulario -->
                                     <?php
-                                    require("../franquicia/select_franquicia_disponible.php");
-                                    if ($resultFranquiciaDisp):
-                                        foreach ($resultFranquiciaDisp as $fila):
+                                    require("../franquicia/select_franquicia.php");
+                                    if ($resultFranquicia):
+                                        foreach ($resultFranquicia as $fila):
                                     ?>
                                     
                                     <option value=<?= $fila['nit'];?>>

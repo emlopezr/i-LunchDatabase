@@ -47,17 +47,17 @@ require "../funciones/select.php";
 
                             <div class="form-group">
                                 <label for="ciudad">Ciudad</label>
-                                <input type="ciudad" name="ciudad" id="ciudad" class="form-control">
+                                <input type="text" name="ciudad" id="ciudad" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="direccion">Direccion</label>
-                                <input type="direccion" name="direccion" id="direccion" class="form-control">
+                                <input type="text" name="direccion" id="direccion" class="form-control">
                             </div>
 
                             <div class="form-group">
                                 <label for="correo">Correo</label>
-                                <input type="correo" name="correo" id="correo" class="form-control">
+                                <input type="email" name="correo" id="correo" class="form-control">
                             </div>
 
                             <div name="taskOption" class="form-group">
@@ -111,9 +111,9 @@ require "../funciones/select.php";
 
                                     <!-- Iterar sobre las franquicias ya creadas y ponerlas en el formulario -->
                                     <?php
-                                    require("../franquicia/select_franquicia.php");
-                                    if ($resultFranquicia):
-                                        foreach ($resultFranquicia as $fila):
+                                    require("../franquicia/select_franquicia_disponible.php");
+                                    if ($resultFranquiciaDisp):
+                                        foreach ($resultFranquiciaDisp as $fila):
                                     ?>
                                     
                                     <option value=<?= $fila['nit'];?>>
@@ -182,14 +182,21 @@ require "../funciones/select.php";
                                 <td><?= $fila["correo"];?></td>
                                 <td><?= $fila["abierto"];?></td>
                                 <?php
+                                 if($fila['administrador_numero_id'] != NULL):
                                 $administradorFranquicia = selectFunction("administrador", "tipo_id = '" . $fila["administrador_tipo_id"] . "' AND " . " numero_id = " . $fila["administrador_numero_id"]);
                                 foreach ($administradorFranquicia as $filaAdmin):
                                 ?>
                                     <td><?= $filaAdmin["nombres"] . " " . $filaAdmin["apellidos"]?> (<?= $filaAdmin["tipo_id"] . ": ". $filaAdmin["numero_id"];?>)</td>
                                 <?php
-                                endforeach;
+                                    endforeach;
+                                else:
                                 ?>
-                                <td><?= $fila["valoracion_comercial"];?></td>
+                                    <td></td>
+                                <?php
+                                endif;
+                                ?>
+
+                                <td><?= $fila["valoracion_comercial"];?>M</td>
                                 <!-- Buscar nombre de la franquicia dueña -->
                                 <?php
                                 if($fila["franquicia_duena"] != NULL):

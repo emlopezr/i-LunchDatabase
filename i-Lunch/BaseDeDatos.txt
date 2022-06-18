@@ -33,6 +33,7 @@ CREATE TABLE restaurante(
   franquicia_duena INT(10) REFERENCES franquicia(nit),
   abierto INT(1) NOT NULL CHECK(abierto IN (0,1)),     
   administrador_tipo_id VARCHAR(2),
+  valoracion_comercial FLOAT(5, 2) NOT NULL CHECK(valoracion_comercial >= 0),
   administrador_numero_id INT(10),
   UNIQUE(pais, ciudad, direccion),
   UNIQUE(nombre, franquicia_duena),

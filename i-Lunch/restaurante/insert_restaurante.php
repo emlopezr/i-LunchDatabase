@@ -12,8 +12,6 @@ $direccion= $_POST["direccion"];
 $correo = $_POST["correo"];
 $franquicia_duena = $_POST["franquicia_duena"];
 $abierto = $_POST["abierto"];
-$administrador_tipo_id = $_POST["administrador_tipo_id"];
-$administrador_numero_id = $_POST["administrador_numero_id"];
 $valoracion_comercial = $_POST["valoracion_comercial"];
 
 // Dividir los dos valores del mismo input
@@ -24,13 +22,12 @@ $administrador_numero_id = $admin[1];
 // Verificar si franquicia_duena es NULL o tiene valor
 if($franquicia_duena != "NULL"){
     // verificar si tiene administrador
-    if($administrador_tipo_id != "NULL"){
+    if($administrador_tipo_id != "NULL"):
 	  $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', '$franquicia_duena', '$abierto', '$administrador_tipo_id', '$valoracion_comercial', '$administrador_numero_id')";
-    }
-    else{
+    elseif($administrador_tipo_id == "NULL"):
       $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', '$franquicia_duena', '$abierto', NULL, '$valoracion_comercial', NULL)";
-    } 
-} 
+    endif;
+}
 else{
     // verificar si tiene administrador
     if($administrador_tipo_id != "NULL"){

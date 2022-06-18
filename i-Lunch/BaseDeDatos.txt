@@ -73,7 +73,7 @@ VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 381, 2364781
 
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonadls.com', '2019-04-29', 4, 1, 134324568, 'CC', 913947193);
+VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonalds.com', '2019-04-29', 4, 1, 134324568, 'CC', 913947193);
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
 VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 3, 0, 134324568, 'CC', 134243395);

@@ -1,41 +1,82 @@
 CREATE TABLE administrador(
   tipo_id VARCHAR(2) CHECK(tipo_id IN ("CC", "CE", "PS")),
-  numero_id INT(10),
+  numero_id INT(10) CHECK(numero_id >= 0),
   nombres VARCHAR(50) NOT NULL,
   apellidos VARCHAR(50) NOT NULL,
   correo VARCHAR(50) UNIQUE NOT NULL,
-  telefono INT(10) UNIQUE NOT NULL,	
+  telefono INT(10) UNIQUE NOT NULL CHECK(telefono >= 0),	
   PRIMARY KEY (tipo_id, numero_id)
 );
 
 CREATE TABLE franquicia(
-  nit INT(10) PRIMARY KEY,
+  nit INT(10) PRIMARY KEY CHECK(nit >= 0),
   nombre VARCHAR(50) UNIQUE NOT NULL,
   correo VARCHAR(50) UNIQUE NOT NULL,
-  telefono INT(10) UNIQUE NOT NULL,
-  costo_franquicia INT(10) NOT NULL CHECK(costo_franquicia > 0),
+  telefono INT(10) UNIQUE NOT NULL CHECK(telefono >= 0),
+  costo_franquicia FLOAT(6, 2) NOT NULL CHECK(costo_franquicia > 0),
   franquicia_duena INT(10) REFERENCES franquicia(nit),
   administrador_tipo_id VARCHAR(2),
   administrador_numero_id INT(10),
   UNIQUE(administrador_tipo_id, administrador_numero_id),
-  FOREIGN KEY (administrador_tipo_id, administrador_numero_id) REFERENCES administrador(tipo_id, numero_id),
+  FOREIGN KEY (administrador_tipo_id, administrador_numero_id)
+  REFERENCES administrador(tipo_id, numero_id),
   CHECK(franquicia_duena <> nit)
 );
 
 CREATE TABLE restaurante(
-  nit INT(10) PRIMARY KEY,
+  nit INT(10) PRIMARY KEY CHECK(nit >= 0),
   nombre VARCHAR(50) NOT NULL,
   pais VARCHAR(50) NOT NULL,
-  fecha_apertura DATE NOT NULL,
   ciudad VARCHAR(50) NOT NULL,
   direccion VARCHAR(50) NOT NULL,
   correo VARCHAR(50) UNIQUE NOT NULL,
+  fecha_apertura DATE NOT NULL,
+  valoracion_comercial INT(1) NOT NULL CHECK(valoracion_comercial BETWEEN 1 and 5),
+  abierto INT(1) NOT NULL CHECK(abierto IN (0,1)),
   franquicia_duena INT(10) REFERENCES franquicia(nit),
-  abierto INT(1) NOT NULL CHECK(abierto IN (0,1)),     
   administrador_tipo_id VARCHAR(2),
-  valoracion_comercial FLOAT(5, 2) NOT NULL CHECK(valoracion_comercial >= 0),
   administrador_numero_id INT(10),
   UNIQUE(pais, ciudad, direccion),
   UNIQUE(nombre, franquicia_duena),
-  FOREIGN KEY (administrador_tipo_id, administrador_numero_id) REFERENCES administrador(tipo_id, numero_id)
+  FOREIGN KEY (administrador_tipo_id, administrador_numero_id)
+  REFERENCES administrador(tipo_id, numero_id)
 );
+
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('CE', 234324910, 'Jhon', 'Smith', 'jhonsmith@ilunch.com', 234329132);
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('CC', 913947193, 'David Esteban', 'Toro Arango', 'datoro@unal.edu.co', 136418283);
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('CE', 879789501, 'Lionel Andrés', 'Messi Cuccittini', 'leomessi@psg.fr', 768768924);
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('CC', 134243395, 'Andrés Felipe', 'Aparicio Mestre', 'anapariciom@unal.edu.co', 324324167);
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('PS', 768768017, 'Ibai', 'Llanos', 'ibai@koi.es', 123210183);
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('CC', 768768017, 'Emmanuel', 'Lopez Rodriguez', 'emlopezr@unal.edu.co', 978989130);
+
+
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (134324568, 'McDonalds', 'contacto@mcdonalds.com', 1029407461, 1450, NULL, 'CE', 234324910);
+
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (236478103, 'Kentucky Fried Chicken', 'international@kfc.com', 284917840, 735, NULL, 'CE', 879789501);
+
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 381, 236478103, 'PS', 768768017);
+
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonadls.com', '2019-04-29', 4, 1, 134324568, 'CC', 913947193);
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 3, 0, 134324568, 'CC', 134243395);
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (423910375, 'Fuiciosos Food Times Square', 'USA', 'New York', '1528 Broadway, 10036', 'newyork@fuiciosos.com', '2022-06-01', 5, 1, NULL, 'CC', 768768017);

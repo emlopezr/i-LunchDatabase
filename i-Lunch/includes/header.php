@@ -19,7 +19,7 @@ $paginaActiva;
       crossorigin="anonymous"
     />
 
-    <link rel="icon" href="/i-Lunch/images/favicon.png">
+    <link rel="icon" href="/BD12022-1_TrabajoFinal/i-Lunch/images/favicon.png">
 
   </head>
 
@@ -27,41 +27,41 @@ $paginaActiva;
     <ul class="nav">
       <?php if ($paginaActiva == 0): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/i-Lunch/index.php">Inicio</a>
+          <a class="nav-link active" href="/BD12022-1_TrabajoFinal/i-Lunch/index.php">Inicio</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/i-Lunch/index.php">Inicio</a>
+          <a class="nav-link" href="/BD12022-1_TrabajoFinal/i-Lunch/index.php">Inicio</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 1): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/i-Lunch/administrador/administrador.php">Administradores</a>
+          <a class="nav-link active" href="/BD12022-1_TrabajoFinal/i-Lunch/administrador/administrador.php">Administradores</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/i-Lunch/administrador/administrador.php">Administradores</a>
+          <a class="nav-link" href="/BD12022-1_TrabajoFinal/i-Lunch/administrador/administrador.php">Administradores</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 2): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/i-Lunch/franquicia/franquicia.php">Franquicias</a>
+          <a class="nav-link active" href="/BD12022-1_TrabajoFinal/i-Lunch/franquicia/franquicia.php">Franquicias</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/i-Lunch/franquicia/franquicia.php">Franquicias</a>
+          <a class="nav-link" href="/BD12022-1_TrabajoFinal/i-Lunch/franquicia/franquicia.php">Franquicias</a>
         </li>
       <?php endif; ?>
 
       <?php if ($paginaActiva == 3): ?>  
         <li class="nav-item nav-pills">
-          <a class="nav-link active" href="/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
+          <a class="nav-link active" href="/BD12022-1_TrabajoFinal/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
         </li>
       <?php else: ?>
         <li class="nav-item">
-          <a class="nav-link" href="/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
+          <a class="nav-link" href="/BD12022-1_TrabajoFinal/i-Lunch/restaurante/restaurante.php">Restaurantes</a>
         </li>
       <?php endif; ?> 
     </ul>

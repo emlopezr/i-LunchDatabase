@@ -4,7 +4,7 @@
 require('../configuraciones/conexion.php');
 
 // Query SQL
-$query = "SELECT * FROM restaurante";
+$query = "SELECT nit, nombre, pais, ciudad, direccion, correo, DATE_FORMAT(fecha_apertura, '%d/%m/%Y') AS fecha_apertura, valoracion_comercial, abierto, franquicia_duena, administrador_tipo_id, administrador_numero_id FROM restaurante";
 
 // Ejecutar consulta
 $resultRestaurante = mysqli_query($conn, $query) or die(mysqli_error($conn));

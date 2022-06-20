@@ -49,35 +49,7 @@ require "../funciones/select.php";
                             </div>
 
                             <div class="form-group">
-                                <label for="franquicia">Franquicia dueña</label>
-                                <select name="franquicia" id="franquicia" class="form-control">
-
-                                    <!-- Si se deja esta, se inserta un NULL -->
-                                    <option value="NULL" selected>
-                                        Ninguna
-                                    </option>
-
-                                    <!-- Iterar sobre las franquicias ya creadas y ponerlas en el formulario -->
-                                    <?php
-                                    require("select_franquicia.php");
-                                    if ($resultFranquicia):
-                                        foreach ($resultFranquicia as $fila):
-                                    ?>
-                                    
-                                    <option value=<?= $fila['nit'];?>>
-                                        <?= $fila['nombre'];?> (NIT: <?= $fila['nit'];?>)
-                                    </option>
-                                    
-                                    <?php
-                                        endforeach;
-                                    endif;
-                                    ?>
-
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="admin">Administradores disponibles</label>
+                                <label for="admin">Administrador</label>
                                 <select name="admin" id="admin" class="form-control">
                                     
                                     <!-- Iterar sobre los admins ya creadas pero sin franquicia y ponerlos en el formulario -->
@@ -120,7 +92,6 @@ require "../funciones/select.php";
                         <th scope="col">Correo</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Costo [$USD]</th>
-                        <th scope="col">Franquicia dueña</th>
                         <th scope="col">Administrador</th>
                         <th></th>
                     </tr>
@@ -143,23 +114,6 @@ require "../funciones/select.php";
                                 <td><?= $fila["correo"];?></td>
                                 <td><?= $fila["telefono"];?></td>
                                 <td>$<?= $fila["costo_franquicia"];?>M</td>
-
-                                <!-- Buscar nombre de la franquicia dueña -->
-                                <?php
-                                if($fila["franquicia_duena"] != NULL):
-                                    $franquiciaDuena = selectFunction("franquicia", "nit = " . $fila["franquicia_duena"]);
-                                    foreach ($franquiciaDuena as $filaFranquicia):
-                                ?>
-                                    <td><?= $filaFranquicia["nombre"];?> (NIT: <?= $filaFranquicia["nit"];?>)</td>
-                                <?php
-                                    endforeach;
-                                // Imprimir vacío si no hay franquicia dueña
-                                else:
-                                ?>
-                                    <td></td>
-                                <?php
-                                endif;
-                                ?>
 
                                 <!-- Buscar nombre del administrador -->
                                 <?php

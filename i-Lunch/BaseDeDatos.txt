@@ -14,13 +14,11 @@ CREATE TABLE franquicia(
   correo VARCHAR(50) UNIQUE NOT NULL,
   telefono INT(10) UNIQUE NOT NULL CHECK(telefono >= 0),
   costo_franquicia FLOAT(6, 2) NOT NULL CHECK(costo_franquicia > 0),
-  franquicia_duena INT(10) REFERENCES franquicia(nit),
   administrador_tipo_id VARCHAR(2),
   administrador_numero_id INT(10),
   UNIQUE(administrador_tipo_id, administrador_numero_id),
   FOREIGN KEY (administrador_tipo_id, administrador_numero_id)
-  REFERENCES administrador(tipo_id, numero_id),
-  CHECK(franquicia_duena <> nit)
+  REFERENCES administrador(tipo_id, numero_id)
 );
 
 CREATE TABLE restaurante(
@@ -62,14 +60,14 @@ INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `cor
 VALUES ('CC', 768768017, 'Emmanuel', 'Lopez Rodriguez', 'emlopezr@unal.edu.co', 978989130);
 
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (134324568, 'McDonalds', 'contacto@mcdonalds.com', 1029407461, 1450, NULL, 'CE', 234324910);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (134324568, 'McDonalds', 'contacto@mcdonalds.com', 1029407461, 1450, 'CE', 234324910);
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (236478103, 'Kentucky Fried Chicken', 'international@kfc.com', 284917840, 735, NULL, 'CE', 879789501);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (236478103, 'Kentucky Fried Chicken', 'international@kfc.com', 284917840, 735, 'CE', 879789501);
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 381, 236478103, 'PS', 768768017);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 381, 'PS', 768768017);
 
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)

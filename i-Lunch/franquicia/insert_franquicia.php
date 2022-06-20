@@ -8,7 +8,6 @@ $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
 $telefono = $_POST["telefono"];
 $costo_franquicia = $_POST["costo"];
-$franquicia_duena = $_POST["franquicia"];
 
 // Dividir los dos valores del mismo input
 $admin = explode('|', $_POST['admin']);
@@ -17,11 +16,8 @@ $administrador_numero_id = $admin[1];
 
 // Query SQL
 // Verificar si franquicia_duena es NULL o tiene valor
-if($franquicia_duena != "NULL"):
-	$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', '$franquicia_duena', '$administrador_tipo_id', '$administrador_numero_id')";
-else:
-	$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', NULL, '$administrador_tipo_id', '$administrador_numero_id')";
-endif;
+
+$query = "INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$correo', '$telefono', '$costo_franquicia', '$administrador_tipo_id', '$administrador_numero_id')";
 
 // Ejecutar consulta
 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));

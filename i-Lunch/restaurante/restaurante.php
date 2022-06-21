@@ -128,8 +128,6 @@ require "../funciones/select.php";
                             </select>
                         </div>
 
-
-
                         <!-- Botón de envío -->
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Crear">
@@ -139,18 +137,16 @@ require "../funciones/select.php";
             </div>
         </div>
 
-        <!-- Ver las franquicias ya creadas -->
+        <!-- Ver los restaurantes ya creadas -->
         <div class="col-7 px-2">
-            <!-- Tabla de franquicias -->
+            <!-- Tabla de restaurantes -->
             <table class="table border-rounded">
                 <!-- Cabecera de la tabla -->
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">NIT</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Pais</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Direccion</th>
+                        <th scope="col">Ubicación</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Fecha de apertura</th>
                         <th scope="col">Estado del restaurante</th>
@@ -163,7 +159,7 @@ require "../funciones/select.php";
 
                 <!-- Cuerpo de la tabla -->
                 <tbody>
-                    <!-- Iterar sobre las franquicias -->
+                    <!-- Iterar sobre los restaurantes -->
                     <?php
                     require('select_restaurante.php');
                     if ($resultRestaurante) :
@@ -175,9 +171,7 @@ require "../funciones/select.php";
                                 <!-- Columnas -->
                                 <td><?= $fila["nit"]; ?></td>
                                 <td><?= $fila["nombre"]; ?></td>
-                                <td><?= $fila["pais"]; ?></td>
-                                <td><?= $fila["ciudad"]; ?></td>
-                                <td><?= $fila["direccion"]; ?></td>
+                                <td><?= $fila["ciudad"]; ?>, <?= $fila["pais"]; ?>. <?= $fila["direccion"]; ?></td>
                                 <td><?= $fila["correo"]; ?></td>
                                 <td><?= $fila["fecha_apertura"]; ?></td>
                                 
@@ -220,8 +214,6 @@ require "../funciones/select.php";
                                 endif;
                                 ?>
 
-
-
                             </tr>
 
                     <?php
@@ -230,11 +222,9 @@ require "../funciones/select.php";
                     ?>
                 </tbody>
             </table>
-
         </div>
+
     </div>
-
-
 </div>
 
 <?php

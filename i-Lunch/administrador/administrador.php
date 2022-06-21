@@ -1,14 +1,18 @@
 <?php
 $paginaActiva = 1;
-include "../includes/header.php"
+include "../includes/header.php";
+require "../funciones/select.php";
 ?>
 
-<div class="container mt-3">
+<div class="mt-5">
     <div class="row">
-        <div class="col-6 px-2">
-            <!-- Recibir los datos e insertarlos en la BD-->
+        <div class="col-1 px2"></div>
+
+        <!-- Recibir los datos e insertarlos en la BD-->
+        <div class="col-3 px-2">
+            <!-- Contenedor -->
             <div class="card">
-                  <!-- Título del contenedor -->
+                <!-- Título del contenedor -->
                 <div class="card-header">
                     <b>Crear un administrador</b>
                 </div>
@@ -18,7 +22,7 @@ include "../includes/header.php"
                     <!-- Formulario de inserción de datos -->
                     <form action="insert_admin.php" class="form-group" method="post">
 
-                    <!-- Campos necesarios -->
+                        <!-- Campos necesarios -->
                         <div name="taskOption" class="form-group">
                             <label for="tipo_id">Tipo de documento</label>
                             <select class="form-control" onchange="" name="tipo id" id="tipo_id">
@@ -28,14 +32,17 @@ include "../includes/header.php"
 
                             </select>
                         </div>
+
                         <div class="form-group">
                             <label for="numero_id">Número de documento</label>
                             <input type="number" name="numero id" id="numero_id" class="form-control">
                         </div>
+
                         <div class="form-group">
                             <label for="nombres">Nombre(s)</label>
                             <input type="text" name="nombres" id="nombres" class="form-control">
                         </div>
+
                         <div class="form-group">
                             <label for="">Apellidos</label>
                             <input type="text" name="apellidos" id="apellidos" class="form-control">
@@ -47,25 +54,60 @@ include "../includes/header.php"
                         </div>
 
                         <div class="form-group">
-                                <label for="telefono">Teléfono</label>
-                                <input type="number" name="telefono" id="correo" class="form-control">
-                            </div>
-                        
-                        <!--librerias para usar jquery-->
-                        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-                        <!--controlador de los tipo radio-->
-
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Insertar">
-                            <a href="administrador.php" class="btn btn-success">Reiniciar</a>
+                            <label for="telefono">Teléfono</label>
+                            <input type="number" name="telefono" id="correo" class="form-control">
                         </div>
 
+                        <!-- Botón de envío -->
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Crear">
+                        </div>
                     </form>
-
                 </div>
             </div>
         </div>
+
+        <!-- Ver los administradores ya creadas -->
+        <div class="col-7 px-2">
+            <!-- Tabla de administradores -->
+            <table class="table border-rounded">
+                <!-- Cabecera de la tabla -->
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Documento</th>
+                        <th scope="col">Nombre completo</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Teléfono</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <!-- Cuerpo de la tabla -->
+                <tbody>
+                    <!-- Iterar sobre los administradores -->
+                    <?php
+                    require('select_admin.php');
+                    if ($resultAdmin) :
+                        foreach ($resultAdmin as $fila) :
+                    ?>
+
+                            <!-- Fila -->
+                            <tr>
+                                <!-- Columnas -->
+                                <td><?= $fila["tipo_id"]; ?>: <?= $fila["numero_id"]; ?></td>
+                                <td><?= $fila["nombres"]; ?> <?= $fila["apellidos"]; ?></td>
+                                <td><?= $fila["correo"]; ?></td>
+                                <td><?= $fila["telefono"]; ?></td>
+                            </tr>
+
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 </div>
 

@@ -58,6 +58,16 @@ require "../funciones/select.php";
                             <label for="fecha_apertura">Fecha de apertura</label>
                             <input type="date" name="fecha_apertura" id="fecha_apertura" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <label for="valoracion_comercial">Valoracion comercial del restaurante</label>
+                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="costo">Costo del restaurante [Millones de $USD]</label>
+                            <input type="number" name="costo" id="costo" class="form-control">
+                        </div>
                         
                         <div name="taskOption" class="form-group">
                             <label for="abierto">Estado del restaurante</label>
@@ -69,11 +79,11 @@ require "../funciones/select.php";
                         </div>
 
                         <div class="form-group">
-                            <label for="admin">Administradores disponibles</label>
+                            <label for="admin">Administrador</label>
                             <select name="admin" id="admin" class="form-control">
                                 <!-- Si se deja esta, se inserta un NULL -->
                                 <option value="NULL" selected>
-                                    Ninguna
+                                    Ninguno
                                 </option>
                                 <!-- Iterar sobre los admins ya creadas pero sin franquicia y ponerlos en el formulario -->
                                 <?php
@@ -93,11 +103,6 @@ require "../funciones/select.php";
                                 ?>
 
                             </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="valoracion_comercial">Valoracion comercial del restaurante</label>
-                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -149,9 +154,10 @@ require "../funciones/select.php";
                         <th scope="col">Ubicación</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Fecha de apertura</th>
+                        <th scope="col">Valoración comercial</th>
+                        <th scope="col">Costo [$USD]</th>
                         <th scope="col">Estado del restaurante</th>
                         <th scope="col">Administrador</th>
-                        <th scope="col">Valoracion comercial</th>
                         <th scope="col">Franquicia dueña</th>
                         <th></th>
                     </tr>
@@ -174,6 +180,8 @@ require "../funciones/select.php";
                                 <td><?= $fila["ciudad"]; ?>, <?= $fila["pais"]; ?>. <?= $fila["direccion"]; ?></td>
                                 <td><?= $fila["correo"]; ?></td>
                                 <td><?= $fila["fecha_apertura"]; ?></td>
+                                <td><?= $fila["valoracion_comercial"]; ?> ★</td>
+                                <td>$<?= $fila["costo_restaurante"]; ?>M</td>
                                 
                                 <?php if($fila["abierto"] == 1):?>
                                     <td>Abierto</td>
@@ -196,7 +204,6 @@ require "../funciones/select.php";
                                 endif;
                                 ?>
 
-                                <td><?= $fila["valoracion_comercial"]; ?> ★</td>
                                 <!-- Buscar nombre de la franquicia dueña -->
                                 <?php
                                 if ($fila["franquicia_duena"] != NULL) :

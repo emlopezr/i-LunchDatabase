@@ -44,8 +44,13 @@ require "../funciones/select.php";
                         </div>
 
                         <div class="form-group">
-                            <label for="costo">Costo de la franquicia</label>
+                            <label for="costo">Costo de la franquicia [Millones de $USD]</label>
                             <input type="number" name="costo" id="costo" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="valoracion_comercial">Valoracion comercial de la franquicia</label>
+                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control">
                         </div>
 
                         <div class="form-group">
@@ -93,8 +98,8 @@ require "../funciones/select.php";
                         <th scope="col">Correo</th>
                         <th scope="col">Teléfono</th>
                         <th scope="col">Costo [$USD]</th>
+                        <th scope="col">Valoración comercial</th>
                         <th scope="col">Administrador</th>
-                        <th></th>
                     </tr>
                 </thead>
 
@@ -115,6 +120,7 @@ require "../funciones/select.php";
                                 <td><?= $fila["correo"]; ?></td>
                                 <td><?= $fila["telefono"]; ?></td>
                                 <td>$<?= $fila["costo_franquicia"]; ?>M</td>
+                                <td><?= $fila["valoracion_comercial"]; ?> ★</td>
 
                                 <!-- Buscar nombre del administrador -->
                                 <?php

@@ -12,29 +12,34 @@ $direccion= $_POST["direccion"];
 $correo = $_POST["correo"];
 $franquicia_duena = $_POST["franquicia_duena"];
 $abierto = $_POST["abierto"];
+$costo_restaurante = $_POST["costo"];
 $valoracion_comercial = $_POST["valoracion_comercial"];
 
 // Dividir los dos valores del mismo input
 $admin = explode('|', $_POST['admin']);
 $administrador_tipo_id = $admin[0];
 $administrador_numero_id = $admin[1];
+
 // Query SQL
 // Verificar si franquicia_duena es NULL o tiene valor
 if($franquicia_duena != "NULL"){
-    // verificar si tiene administrador
-    if($administrador_tipo_id != "NULL"):
-	  $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', '$franquicia_duena', '$abierto', '$administrador_tipo_id', '$valoracion_comercial', '$administrador_numero_id')";
-    elseif($administrador_tipo_id == "NULL"):
-      $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', '$franquicia_duena', '$abierto', NULL, '$valoracion_comercial', NULL)";
-    endif;
+    // Si franquicia_duena, si admin
+    if($administrador_tipo_id != "NULL"){
+        $query = "INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$ciudad', '$direccion', '$correo', '$fecha_apertura', '$costo_restaurante', '$valoracion_comercial', '$abierto', '$franquicia_duena', '$administrador_tipo_id', '$administrador_numero_id')";
+    }
+    // Si franquicia_duena, no admin
+    else if($administrador_tipo_id == "NULL"){
+        $query = "INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$ciudad', '$direccion', '$correo', '$fecha_apertura', '$costo_restaurante', '$valoracion_comercial', '$abierto', '$franquicia_duena', NULL, NULL)";
+    }
 }
 else{
-    // verificar si tiene administrador
+    // No franquicia_duena, si admin
     if($administrador_tipo_id != "NULL"){
-        $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', NULL, '$abierto', '$administrador_tipo_id', '$valoracion_comercial', '$administrador_numero_id')";
+        $query = "INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$ciudad', '$direccion', '$correo', '$fecha_apertura', '$costo_restaurante', '$valoracion_comercial', '$abierto', NULL, '$administrador_tipo_id', '$administrador_numero_id')";
     }
+    // No franquicia_duena, no admin
     else{
-        $query = "INSERT INTO `restaurante` (`nit`, `nombre`, `pais`, `fecha_apertura`, `ciudad`, `direccion`, `correo`, `franquicia_duena`, `abierto`, `administrador_tipo_id`, `valoracion_comercial`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$fecha_apertura', '$ciudad', '$direccion', '$correo', NULL, '$abierto', NULL, '$valoracion_comercial', NULL)";
+        $query = "INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`) VALUES ('$nit', '$nombre', '$pais', '$ciudad', '$direccion', '$correo', '$fecha_apertura', '$costo_restaurante', '$valoracion_comercial', '$abierto', NULL, NULL, NULL)";
     }
 }
 

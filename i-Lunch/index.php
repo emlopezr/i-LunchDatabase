@@ -38,12 +38,51 @@ include "includes/header.php";
         </div>
     </div>
 
-    <!-- Consulta 1 -->
-    <div class="row">
+    <!-- Consultas -->
+    <div class="row mt-5">
         <div class="col-1 px2"></div>
 
         <div class="col-10 px2">
-            <!-- Imagen i-Lunch -->
+            <h2>Consultas</h2>
+
+            <!-- Análogo a consulta 1 -->
+            <!-- CostoTotal suma costo de todos los restaurantes asociados a una franquicia -->
+            <!-- Mostrar NIT y nombre de las franquicias -->
+            <!-- CostoTotal > 500 -->
+            <!-- Franquicia es dueña de más de 2 restaurantes -->
+            <!-- El administrador que gestiona la franquicia no gestiona ningún restaurante -->
+
+            <form action="consultas/consulta_1.php" class="form-group" method="post">
+                <!-- ! Falta una breve decoración/explicación de esta consulta -->
+                
+                <!-- Botón de consulta -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Consulta 1">
+                </div>
+            </form>
+            
+            <!-- Análogo a consulta 2 -->
+            <!-- Mostrar NIT y valoración comercial de los restaurantes -->
+            <!-- Valoración comercial restaurante > Valoración comercial de la franquicia -->
+            <!-- Administrador que gestiona el restaurante es el adminsitrador de la franquicia dueña  -->
+            
+            <form action="consultas/consulta_2.php" class="form-group" method="post">
+                <!-- ! Falta una breve decoración/explicación de esta consulta -->
+                
+                <!-- Botón de consulta -->
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Consulta 2">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Búsquedas -->
+    <div class="row mt-5">
+        <div class="col-1 px2"></div>
+
+        <div class="col-10 px2">
+            <h2>Búsquedas</h2>
         </div>
     </div>
 

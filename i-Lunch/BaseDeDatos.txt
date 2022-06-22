@@ -14,6 +14,7 @@ CREATE TABLE franquicia(
   correo VARCHAR(50) UNIQUE NOT NULL,
   telefono INT(10) UNIQUE NOT NULL CHECK(telefono >= 0),
   costo_franquicia FLOAT(6, 2) NOT NULL CHECK(costo_franquicia > 0),
+  valoracion_comercial INT(1) NOT NULL CHECK(valoracion_comercial BETWEEN 1 and 5),
   administrador_tipo_id VARCHAR(2),
   administrador_numero_id INT(10),
   UNIQUE(administrador_tipo_id, administrador_numero_id),
@@ -29,6 +30,7 @@ CREATE TABLE restaurante(
   direccion VARCHAR(50) NOT NULL,
   correo VARCHAR(50) UNIQUE NOT NULL,
   fecha_apertura DATE NOT NULL,
+  costo_restaurante FLOAT(6, 2) NOT NULL CHECK(costo_restaurante > 0),
   valoracion_comercial INT(1) NOT NULL CHECK(valoracion_comercial BETWEEN 1 and 5),
   abierto INT(1) NOT NULL CHECK(abierto IN (0,1)),
   franquicia_duena INT(10) REFERENCES franquicia(nit),
@@ -60,21 +62,21 @@ INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `cor
 VALUES ('CC', 768768017, 'Emmanuel', 'Lopez Rodriguez', 'emlopezr@unal.edu.co', 978989130);
 
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (134324568, 'McDonalds', 'contacto@mcdonalds.com', 1029407461, 1450, 'CE', 234324910);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `valoracion_comercial`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (134324568, 'McDonalds', 'contacto@mcdonalds.com', 1029407461, 1450.3, 3, 'CE', 234324910);
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (236478103, 'Kentucky Fried Chicken', 'international@kfc.com', 284917840, 735, 'CE', 879789501);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `valoracion_comercial`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (236478103, 'Kentucky Fried Chicken', 'international@kfc.com', 284917840, 735.1, 4, 'CE', 879789501);
 
-INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 381, 'PS', 768768017);
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `valoracion_comercial`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (332423104, 'Burger King', 'ilunch@burguer.king', 302648103, 346, 2, 'PS', 768768017);
 
 
-INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonalds.com', '2019-04-29', 4, 1, 134324568, 'CC', 913947193);
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonalds.com', '2019-04-29', 250, 4, 1, 134324568, 'CC', 913947193);
 
-INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 3, 0, 134324568, 'CC', 134243395);
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 100, 3, 0, 134324568, 'CC', 134243395);
 
-INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (423910375, 'Fuiciosos Food Times Square', 'USA', 'New York', '1528 Broadway, 10036', 'newyork@fuiciosos.com', '2022-06-01', 5, 1, NULL, 'CC', 768768017);
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (423910375, 'Fuiciosos Food Times Square', 'USA', 'New York', '1528 Broadway, 10036', 'newyork@fuiciosos.com', '2022-06-01', 500, 5, 1, NULL, 'CC', 768768017);

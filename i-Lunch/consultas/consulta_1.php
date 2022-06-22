@@ -13,7 +13,13 @@ require('../configuraciones/conexion.php');
 // Franquicia es dueña de más de 2 restaurantes
 // El administrador que gestiona la franquicia no gestiona ningún restaurante
 
-$query = "SELECT nit, nombre FROM franquicia";
+$query = "SELECT nit, nombre FROM franquicia AS f
+          WHERE ((SELECT SUM(costo_restaurante) FROM restaurante AS r WHERE r.franquicia_duena = f.nit) > 500) AND
+                ((SELECT COUNT(nit) FROM restaurante as r WHERE r.franquicia_duena = f.nit GROUP BY(r.franquicia_duena)) > 2) AND
+                EXISTS (SELECT tipo_id, numero_id FROM administrador AS a
+                        WHERE (a.tipo_id = f.administrador_tipo_id AND a.numero_id = f.administrador_numero_id) AND
+                        NOT EXISTS(SELECT administrador_tipo_id, administrador_numero_id FROM restaurante as r
+                                   WHERE r.administrador_tipo_id = a.tipo_id AND r.administrador_numero_id = a.numero_id))";
 
 // Ejecutar consulta
 $resultConsulta1 = mysqli_query($conn, $query) or die(mysqli_error($conn));

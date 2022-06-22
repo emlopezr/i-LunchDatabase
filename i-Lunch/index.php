@@ -52,7 +52,7 @@ include "includes/header.php";
             <!-- Franquicia es dueña de más de 2 restaurantes -->
             <!-- El administrador que gestiona la franquicia no gestiona ningún restaurante -->
 
-            <form action="consultas/consulta_1.php" class="form-group" method="post">
+            <form action="consultas/consulta_1.php" class="form-group mt-3" method="post">
                 <!-- ! Falta una breve decoración/explicación de esta consulta -->
                 
                 <!-- Botón de consulta -->
@@ -66,7 +66,7 @@ include "includes/header.php";
             <!-- Valoración comercial restaurante > Valoración comercial de la franquicia -->
             <!-- Administrador que gestiona el restaurante es el adminsitrador de la franquicia dueña  -->
             
-            <form action="consultas/consulta_2.php" class="form-group" method="post">
+            <form action="consultas/consulta_2.php" class="form-group mt-3" method="post">
                 <!-- ! Falta una breve decoración/explicación de esta consulta -->
                 
                 <!-- Botón de consulta -->

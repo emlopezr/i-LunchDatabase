@@ -6,7 +6,8 @@ require "../funciones/select.php";
 
 <div class="mt-5">
     <div class="row">
-        <div class="col-1 px2"></div>
+        <!-- Separación. No es la forma más ortodoxa, pero sirve -->
+        <div class="col-1 px2" style="width: 4.166666665%; flex: 0 0 4.166666665%; max-width: 4.166666665%;"></div>
 
         <!-- Recibir los datos e insertarlos en la BD-->
         <div class="col-3 px-2">
@@ -25,53 +26,53 @@ require "../funciones/select.php";
                         <!-- Campos necesarios -->
                         <div class="form-group">
                             <label for="nit">NIT</label>
-                            <input type="number" name="nit" id="nit" class="form-control">
+                            <input type="number" name="nit" id="nit" class="form-control" min="0" max="999999999" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control">
+                            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="pais">Pais</label>
-                            <input type="text" name="pais" id="pais" class="form-control">
+                            <input type="text" name="pais" id="pais" class="form-control" maxlength="50" required>
                         </div>
 
                         
                         <div class="form-group">
                             <label for="ciudad">Ciudad</label>
-                            <input type="text" name="ciudad" id="ciudad" class="form-control">
+                            <input type="text" name="ciudad" id="ciudad" class="form-control" maxlength="50" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="direccion">Direccion</label>
-                            <input type="text" name="direccion" id="direccion" class="form-control">
+                            <input type="text" name="direccion" id="direccion" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="correo">Correo</label>
-                            <input type="email" name="correo" id="correo" class="form-control">
+                            <input type="email" name="correo" id="correo" class="form-control" maxlength="50" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="fecha_apertura">Fecha de apertura</label>
-                            <input type="date" name="fecha_apertura" id="fecha_apertura" class="form-control">
+                            <input type="date" name="fecha_apertura" id="fecha_apertura" class="form-control" required>
                         </div>
 
                         <div class="form-group">
                             <label for="valoracion_comercial">Valoracion comercial del restaurante</label>
-                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control">
+                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control" min="1" max="5" required>
                         </div>
 
                         <div class="form-group">
                             <label for="costo">Costo del restaurante [Millones de $USD]</label>
-                            <input type="number" name="costo" id="costo" class="form-control">
+                            <input type="number" name="costo" id="costo" class="form-control" min="0" max=9999.99" step="0.01" required>
                         </div>
                         
                         <div name="taskOption" class="form-group">
                             <label for="abierto">Estado del restaurante</label>
-                            <select class="form-control" onchange="cambioTipo(this)" name="abierto" id="abierto">
+                            <select class="form-control" onchange="cambioTipo(this)" name="abierto" id="abierto" required>
                                 <option value="1"> Abierto</option>
                                 <option value="0"> Cerrado</option>
 
@@ -80,7 +81,7 @@ require "../funciones/select.php";
 
                         <div class="form-group">
                             <label for="admin">Administrador</label>
-                            <select name="admin" id="admin" class="form-control">
+                            <select name="admin" id="admin" class="form-control" required>
                                 <!-- Si se deja esta, se inserta un NULL -->
                                 <option value="NULL" selected>
                                     Ninguno
@@ -107,7 +108,7 @@ require "../funciones/select.php";
 
                         <div class="form-group">
                             <label for="franquicia_duena">Franquicia dueña</label>
-                            <select name="franquicia_duena" id="franquicia_duena" class="form-control">
+                            <select name="franquicia_duena" id="franquicia_duena" class="form-control" required>
 
                                 <!-- Si se deja esta, se inserta un NULL -->
                                 <option value="NULL" selected>

@@ -25,37 +25,41 @@ require "../funciones/select.php";
                         <!-- Campos necesarios -->
                         <div class="form-group">
                             <label for="nit">NIT</label>
-                            <input type="number" name="nit" id="nit" class="form-control">
+                            <input type="number" name="nit" id="nit" class="form-control" min="0" max="999999999" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control">
+                            <input type="text" name="nombre" id="nombre" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="correo">Correo electrónico</label>
-                            <input type="email" name="correo" id="correo" class="form-control">
+                            <input type="email" name="correo" id="correo" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
-                            <input type="number" name="telefono" id="correo" class="form-control">
+                            <input type="number" name="telefono" id="correo" class="form-control" min="0" max="999999999" required>
                         </div>
 
                         <div class="form-group">
                             <label for="costo">Costo de la franquicia [Millones de $USD]</label>
-                            <input type="number" name="costo" id="costo" class="form-control">
+                            <input type="number" name="costo" id="costo" class="form-control" min="0" max=9999.99" step="0.01" required>
                         </div>
 
                         <div class="form-group">
                             <label for="valoracion_comercial">Valoracion comercial de la franquicia</label>
-                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control">
+                            <input type="number" name="valoracion_comercial" id="valoracion_comercial" class="form-control" min="1" max="5" required>
                         </div>
 
                         <div class="form-group">
                             <label for="admin">Administrador</label>
-                            <select name="admin" id="admin" class="form-control">
+                            <select name="admin" id="admin" class="form-control" required>
+                                <!-- Si se deja esta, se inserta un NULL -->
+                                <option value="NULL" selected>
+                                    Ninguno
+                                </option>
 
                                 <!-- Iterar sobre los admins ya creadas pero sin franquicia y ponerlos en el formulario -->
                                 <?php
@@ -122,15 +126,21 @@ require "../funciones/select.php";
                                 <td>$<?= $fila["costo_franquicia"]; ?>M</td>
                                 <td><?= $fila["valoracion_comercial"]; ?> ★</td>
 
-                                <!-- Buscar nombre del administrador -->
-                                <?php
-                                $administradorFranquicia = selectFunction("administrador", "tipo_id = '" . $fila["administrador_tipo_id"] . "' AND " . " numero_id = " . $fila["administrador_numero_id"]);
-                                foreach ($administradorFranquicia as $filaAdmin) :
-                                ?>
-                                    <td><?= $filaAdmin["nombres"] . " " . $filaAdmin["apellidos"] ?> (<?= $filaAdmin["tipo_id"] . ": " . $filaAdmin["numero_id"]; ?>)</td>
-                                <?php
-                                endforeach;
-                                ?>
+                                <?php if($fila["administrador_tipo_id"] != NULL): ?>
+                                    <!-- Buscar nombre del administrador -->
+                                    <?php
+                                    $administradorFranquicia = selectFunction("administrador", "tipo_id = '" . $fila["administrador_tipo_id"] . "' AND " . " numero_id = " . $fila["administrador_numero_id"]);
+                                    foreach ($administradorFranquicia as $filaAdmin) :
+                                    ?>
+                                        <td><?= $filaAdmin["nombres"] . " " . $filaAdmin["apellidos"] ?> (<?= $filaAdmin["tipo_id"] . ": " . $filaAdmin["numero_id"]; ?>)</td>
+                                    <?php
+                                    endforeach;
+                                    ?>
+                                <?php else: ?>
+                                    <!-- Imprimir vacío si no hay admin -->
+                                    <td></td>
+
+                                <?php endif; ?>
 
                             </tr>
 

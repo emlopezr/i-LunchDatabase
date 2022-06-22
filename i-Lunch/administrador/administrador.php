@@ -14,7 +14,7 @@ require "../funciones/select.php";
             <div class="card">
                 <!-- Título del contenedor -->
                 <div class="card-header">
-                    <b>Crear un administrador</b>
+                    <b>Crear un Administrador</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->
@@ -25,7 +25,7 @@ require "../funciones/select.php";
                         <!-- Campos necesarios -->
                         <div name="taskOption" class="form-group">
                             <label for="tipo_id">Tipo de documento</label>
-                            <select class="form-control" onchange="" name="tipo id" id="tipo_id">
+                            <select class="form-control" onchange="" name="tipo id" id="tipo_id" required>
                                 <option value="CC">CC</option>
                                 <option value="CE">CE</option>
                                 <option value="PS">PS</option>
@@ -35,27 +35,27 @@ require "../funciones/select.php";
 
                         <div class="form-group">
                             <label for="numero_id">Número de documento</label>
-                            <input type="number" name="numero id" id="numero_id" class="form-control">
+                            <input type="number" name="numero id" id="numero_id" class="form-control" min="0" max="999999999" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nombres">Nombre(s)</label>
-                            <input type="text" name="nombres" id="nombres" class="form-control">
+                            <input type="text" name="nombres" id="nombres" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos" class="form-control">
+                            <input type="text" name="apellidos" id="apellidos" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="correo">Correo</label>
-                            <input type="email" name="correo" id="correo" class="form-control">
+                            <input type="email" name="correo" id="correo" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
                             <label for="telefono">Teléfono</label>
-                            <input type="number" name="telefono" id="correo" class="form-control">
+                            <input type="number" name="telefono" id="correo" class="form-control"  min="0" max="999999999" required>
                         </div>
 
                         <!-- Botón de envío -->

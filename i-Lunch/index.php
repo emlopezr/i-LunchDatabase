@@ -44,7 +44,7 @@ include "includes/header.php";
 
         <div class="col-5 px2">
             <h2>Consulta 1</h2>
-            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a 500, la franquicia es dueña de más de 2 restaurantes y el administrador que gestiona la franquicia no gestiona ningún restaurante.</p>
+            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a USD $500M, su franquicia dueña es dueña de 2 o más restaurantes y el administrador que gestiona la franquicia no gestiona ningún restaurante.</p>
             <a href="consultas/consulta_1.php" class="btn btn-primary">Realizar consulta</a>
         </div>
 

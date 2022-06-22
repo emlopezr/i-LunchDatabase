@@ -42,38 +42,16 @@ include "includes/header.php";
     <div class="row mt-5">
         <div class="col-1 px2"></div>
 
-        <div class="col-10 px2">
-            <h2>Consultas</h2>
+        <div class="col-5 px2">
+            <h2>Consulta 1</h2>
+            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a 500, la franquicia es dueña de más de 2 restaurantes y el administrador que gestiona la franquicia no gestiona ningún restaurante.</p>
+            <a href="consultas/consulta_1.php" class="btn btn-primary">Realizar consulta</a>
+        </div>
 
-            <!-- Análogo a consulta 1 -->
-            <!-- CostoTotal suma costo de todos los restaurantes asociados a una franquicia -->
-            <!-- Mostrar NIT y nombre de las franquicias -->
-            <!-- CostoTotal > 500 -->
-            <!-- Franquicia es dueña de más de 2 restaurantes -->
-            <!-- El administrador que gestiona la franquicia no gestiona ningún restaurante -->
-
-            <form action="consultas/consulta_1.php" class="form-group mt-3" method="post">
-                <!-- ! Falta una breve decoración/explicación de esta consulta -->
-                
-                <!-- Botón de consulta -->
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Consulta 1">
-                </div>
-            </form>
-            
-            <!-- Análogo a consulta 2 -->
-            <!-- Mostrar NIT y valoración comercial de los restaurantes -->
-            <!-- Valoración comercial restaurante > Valoración comercial de la franquicia -->
-            <!-- Administrador que gestiona el restaurante es el adminsitrador de la franquicia dueña  -->
-            
-            <form action="consultas/consulta_2.php" class="form-group mt-3" method="post">
-                <!-- ! Falta una breve decoración/explicación de esta consulta -->
-                
-                <!-- Botón de consulta -->
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Consulta 2">
-                </div>
-            </form>
+        <div class="col-5 px2">
+            <h2>Consulta 2</h2>
+            <p class="text-justify">Se muestra el NIT y la valoración comercial de los restaurantes los cuales su valoración comercial es mayor a la valoración comercial de su franquicia dueña y a su vez el administrador que gestiona el restaurante es el adminsitrador que gestiona la franquicia dueña.</p>
+            <a href="consultas/consulta_2.php" class="btn btn-primary">Realizar consulta</a>
         </div>
     </div>
 
@@ -81,8 +59,12 @@ include "includes/header.php";
     <div class="row mt-5">
         <div class="col-1 px2"></div>
 
-        <div class="col-10 px2">
-            <h2>Búsquedas</h2>
+        <div class="col-5 px2">
+            <h2>Búsqueda 1</h2>
+        </div>
+
+        <div class="col-5 px2">
+            <h2>Búsqueda 2</h2>
         </div>
     </div>
 

@@ -7,8 +7,8 @@ require('../configuraciones/conexion.php');
 
 // Query SQL
 
-// CostoTotal suma costo de todos los restaurantes asociados a una franquicia
-// Mostrar NIT y nombre de las franquicias
+// CostoTotal = Suma del costo de todos los restaurantes asociados a una franquicia
+// Mostrar solo el NIT y nombre de las franquicias
 // CostoTotal > 500
 // Franquicia es dueña de más de 2 restaurantes
 // El administrador que gestiona la franquicia no gestiona ningún restaurante
@@ -31,7 +31,13 @@ mysqli_close($conn);
     <div class="row">
         <div class="col-1 px2"></div>
 
-        <div class="col-10 px2">
+        <div class="col-4 px-2">
+            <h2>Consulta 1</h2>
+            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a 500, la franquicia es dueña de más de 2 restaurantes y el administrador que gestiona la franquicia no gestiona ningún restaurante.</p>
+            <a href="../index.php" class="btn btn-primary">Regresar a la página principal</a>
+        </div>
+
+        <div class="col-6 px2">
             <!-- Tabla de resultados -->
             <table class="table border-rounded">
                 <!-- Cabecera de la tabla -->

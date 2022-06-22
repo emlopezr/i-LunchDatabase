@@ -80,3 +80,27 @@ VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
 VALUES (423910375, 'Fuiciosos Food Times Square', 'USA', 'New York', '1528 Broadway, 10036', 'newyork@fuiciosos.com', '2022-06-01', 500, 5, 1, NULL, 'CC', 768768017);
+
+
+INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
+VALUES ('PS', 917394871, 'Fernando', 'Alonso', 'fernandoalonso@alpine.com', 274918391);
+
+INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia`, `valoracion_comercial`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (183048129, 'Tesos Food', 'contacto@tesosfood.com', 731207341, 777.77, 5, 'PS', 917394871);
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (721639183, 'Tesos Food M8', 'Colombia', 'Medellín', 'Facultad de Minas. M8-201', 'fminas@tesos.com', '2022-01-01', 200, 4, 0, 183048129, NULL, NULL);
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (234351123, 'Tesos Food Kuala Lumpur', 'Malasia', 'Kuala Lumpur', 'Calle 100 #06-34', 'malasia@tesos.com', '2032-04-13', 100, 3, 1, 183048129, NULL, NULL);
+
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (927123491, 'Tesos Food Torre Eiffel', 'Francia', 'Paris', 'Champ de Mars, 5 Av. Anatole France, 75007', 'eiffel@tesos.com', '2026-07-08', 400, 5, 1, 183048129, NULL, NULL);
+
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (827192783, 'Burguer King Monaco', 'Monaco', 'Montecarlo', '1 Quai Antoine 1er, 98000', 'monaco@burguerking.com', '2011-11-11', 300, 4, 0, 332423104, 'PS', 768768017);
+
+INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
+VALUES (918391481, 'KFC Bello City', 'Colombia', 'Bello', 'Carrera 50 #5A0-1', 'bellocity@kfc.co', '2022-04-20', 50.5, 5, 1, 236478103, 'CE', 879789501);

@@ -65,6 +65,8 @@ include "includes/header.php";
 
         <div class="col-5 px2">
             <h2>Búsqueda 2</h2>
+            <p class="text-justify">El usuario ingresa dos números enteros n1 y n2, n1 ≥ 0, n2 > n1. Se muestra el nit y el nombre de todas las franquicias que son dueñas de entre n1 y n2 restaurantes (intervalo cerrado [n1, n2]).</p>
+            <a href="busquedas/busqueda_2.php" class="btn btn-primary">Realizar busqueda</a>
         </div>
     </div>
 

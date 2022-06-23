@@ -76,7 +76,7 @@ INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo
 VALUES (140913940, 'McDonalds Minas', 'Colombia', 'Medellin', 'Facultad de Minas. M9-301', 'minas@mcdonalds.com', '2019-04-29', 250, 4, 1, 134324568, 'CC', 913947193);
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 100, 3, 0, 134324568, 'CC', 134243395);
+VALUES (223103950, 'KFC Buenos Aires', 'Argentina', 'Buenos Aires', 'Calle 105 #60-34', 'argentina@kfc.com', '2011-11-18', 100, 3, 0, 236478103, 'CC', 134243395);
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
 VALUES (423910375, 'Fuiciosos Food Times Square', 'USA', 'New York', '1528 Broadway, 10036', 'newyork@fuiciosos.com', '2022-06-01', 500, 5, 1, NULL, 'CC', 768768017);

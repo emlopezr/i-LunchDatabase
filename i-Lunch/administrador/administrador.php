@@ -12,14 +12,14 @@ require "../funciones/select.php";
         <div class="col-3 px-2">
             <!-- Contenedor -->
             <div class="card">
-                <!-- Título del contenedor -->
+                <!-- Titulo del contenedor -->
                 <div class="card-header">
                     <b>Crear un Administrador</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->
                 <div class="card-body">
-                    <!-- Formulario de inserción de datos -->
+                    <!-- Formulario de insercion de datos -->
                     <form action="insert_admin.php" class="form-group" method="post">
 
                         <!-- Campos necesarios -->
@@ -34,7 +34,7 @@ require "../funciones/select.php";
                         </div>
 
                         <div class="form-group">
-                            <label for="numero_id">Número de documento</label>
+                            <label for="numero_id">Numero de documento</label>
                             <input type="number" name="numero id" id="numero_id" class="form-control" min="0" max="999999999" required>
                         </div>
 
@@ -54,11 +54,11 @@ require "../funciones/select.php";
                         </div>
 
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono">Telefono</label>
                             <input type="number" name="telefono" id="correo" class="form-control"  min="0" max="999999999" required>
                         </div>
 
-                        <!-- Botón de envío -->
+                        <!-- Boton de envio -->
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Crear">
                         </div>
@@ -77,7 +77,7 @@ require "../funciones/select.php";
                         <th scope="col">Documento</th>
                         <th scope="col">Nombre completo</th>
                         <th scope="col">Correo</th>
-                        <th scope="col">Teléfono</th>
+                        <th scope="col">Telefono</th>
                         <th></th>
                     </tr>
                 </thead>

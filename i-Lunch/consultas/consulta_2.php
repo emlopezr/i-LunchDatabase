@@ -7,8 +7,8 @@ require('../configuraciones/conexion.php');
 
 // Query SQL
 
-// Mostrar solo el NIT y valoración comercial de los restaurantes
-// Valoración comercial restaurante > Valoración comercial de la franquicia
+// Mostrar solo el NIT y valoracion comercial de los restaurantes
+// Valoracion comercial restaurante > Valoracion comercial de la franquicia
 // Administrador que gestiona el restaurante es el adminsitrador que gestiona la franquicia dueña 
 
 $query = "SELECT nit, valoracion_comercial FROM restaurante AS r
@@ -28,8 +28,8 @@ mysqli_close($conn);
 
         <div class="col-4 px-2">
             <h2>Consulta 2</h2>
-            <p class="text-justify">Se muestra el NIT y la valoración comercial de los restaurantes los cuales su valoración comercial es mayor a la valoración comercial de su franquicia dueña y a su vez el administrador que gestiona el restaurante es el adminsitrador que gestiona la franquicia dueña.</p>
-            <a href="../index.php" class="btn btn-primary">Regresar a la página principal</a>
+            <p class="text-justify">Se muestra el NIT y la valoracion comercial de los restaurantes los cuales su valoracion comercial es mayor a la valoracion comercial de su franquicia dueña y a su vez el administrador que gestiona el restaurante es el adminsitrador que gestiona la franquicia dueña.</p>
+            <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
         </div>
 
         <div class="col-6 px2">
@@ -39,7 +39,7 @@ mysqli_close($conn);
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">NIT</th>
-                        <th scope="col">Valoración comercial</th>
+                        <th scope="col">Valoracion comercial</th>
                     </tr>
                 </thead>
 

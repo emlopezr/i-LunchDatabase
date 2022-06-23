@@ -50,10 +50,10 @@ INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `cor
 VALUES ('CC', 913947193, 'David Esteban', 'Toro Arango', 'datoro@unal.edu.co', 136418283);
 
 INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
-VALUES ('CE', 879789501, 'Lionel Andrés', 'Messi Cuccittini', 'leomessi@psg.fr', 768768924);
+VALUES ('CE', 879789501, 'Lionel Andres', 'Messi Cuccittini', 'leomessi@psg.fr', 768768924);
 
 INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
-VALUES ('CC', 134243395, 'Andrés Felipe', 'Aparicio Mestre', 'anapariciom@unal.edu.co', 324324167);
+VALUES ('CC', 134243395, 'Andres Felipe', 'Aparicio Mestre', 'anapariciom@unal.edu.co', 324324167);
 
 INSERT INTO `administrador`(`tipo_id`, `numero_id`, `nombres`, `apellidos`, `correo`, `telefono`)
 VALUES ('PS', 768768017, 'Ibai', 'Llanos', 'ibai@koi.es', 123210183);
@@ -89,7 +89,7 @@ INSERT INTO `franquicia`(`nit`,`nombre`, `correo`, `telefono`, `costo_franquicia
 VALUES (183048129, 'Tesos Food', 'contacto@tesosfood.com', 731207341, 777.77, 5, 'PS', 917394871);
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
-VALUES (721639183, 'Tesos Food M8', 'Colombia', 'Medellín', 'Facultad de Minas. M8-201', 'fminas@tesos.com', '2022-01-01', 200, 4, 0, 183048129, NULL, NULL);
+VALUES (721639183, 'Tesos Food M8', 'Colombia', 'Medellin', 'Facultad de Minas. M8-201', 'fminas@tesos.com', '2022-01-01', 200, 4, 0, 183048129, NULL, NULL);
 
 INSERT INTO `restaurante`(`nit`,`nombre`, `pais`, `ciudad`, `direccion`, `correo`, `fecha_apertura`, `costo_restaurante`, `valoracion_comercial`, `abierto`, `franquicia_duena`, `administrador_tipo_id`, `administrador_numero_id`)
 VALUES (234351123, 'Tesos Food Kuala Lumpur', 'Malasia', 'Kuala Lumpur', 'Calle 100 #06-34', 'malasia@tesos.com', '2032-04-13', 100, 3, 1, 183048129, NULL, NULL);

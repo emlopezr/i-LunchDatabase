@@ -6,21 +6,21 @@ require "../funciones/select.php";
 
 <div class="mt-5">
     <div class="row">
-        <!-- Separación. No es la forma más ortodoxa, pero sirve -->
+        <!-- Separacion. No es la forma mas ortodoxa, pero sirve -->
         <div class="col-1 px2" style="width: 4.166666665%; flex: 0 0 4.166666665%; max-width: 4.166666665%;"></div>
 
         <!-- Recibir los datos e insertarlos en la BD-->
         <div class="col-3 px-2">
             <!-- Contenedor -->
             <div class="card">
-                <!-- Título del contenedor -->
+                <!-- Titulo del contenedor -->
                 <div class="card-header">
                     <b>Crear un Restaurante</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->
                 <div class="card-body">
-                    <!-- Formulario de inserción de datos -->
+                    <!-- Formulario de insercion de datos -->
                     <form action="insert_restaurante.php" class="form-group" method="post">
 
                         <!-- Campos necesarios -->
@@ -134,7 +134,7 @@ require "../funciones/select.php";
                             </select>
                         </div>
 
-                        <!-- Botón de envío -->
+                        <!-- Boton de envio -->
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Crear">
                         </div>
@@ -152,10 +152,10 @@ require "../funciones/select.php";
                     <tr>
                         <th scope="col">NIT</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Ubicación</th>
+                        <th scope="col">Ubicacion</th>
                         <th scope="col">Correo</th>
                         <th scope="col">Fecha de apertura</th>
-                        <th scope="col">Valoración comercial</th>
+                        <th scope="col">Valoracion comercial</th>
                         <th scope="col">Costo [$USD]</th>
                         <th scope="col">Estado del restaurante</th>
                         <th scope="col">Administrador</th>
@@ -214,7 +214,7 @@ require "../funciones/select.php";
                                         <td><?= $filaFranquicia["nombre"]; ?> (NIT: <?= $filaFranquicia["nit"]; ?>)</td>
                                     <?php
                                     endforeach;
-                                // Imprimir vacío si no hay franquicia dueña
+                                // Imprimir vacio si no hay franquicia dueña
                                 else :
                                     ?>
                                     <td></td>

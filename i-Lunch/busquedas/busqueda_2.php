@@ -5,22 +5,27 @@ include "../includes/header.php";
 
 <div class="mt-5">
     <div class="row">
-        <!-- Separación. No es la forma más ortodoxa, pero sirve -->
-        <div class="col-1 px2" style="width: 4.166666665%; flex: 0 0 4.166666665%; max-width: 4.166666665%;"></div>
+        <div class="col-1 px2"></div>
+
+        <div class="col-4 px-2">
+            <h2>Busqueda 2</h2>
+            <p class="text-justify">El usuario ingresa dos numeros enteros N1 y N2. Se cumple que 0 ≤ N1 < N2. Se muestra el NIT y el nombre de todas las franquicias que son dueñas de entre N1 y N2 restaurantes (Intervalo cerrado [N1, N2]).</p>
+                    <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
+        </div>
 
         <!-- Recibir los datos e insertarlos en la BD-->
-        <div class="col-3 px-2">
+        <div class="col-6 px-2">
             <!-- Contenedor -->
             <div class="card">
-                <!-- Título del contenedor -->
+                <!-- Titulo del contenedor -->
                 <div class="card-header">
                     <b>Datos necesarios</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->
                 <div class="card-body">
-                    <!-- Formulario de inserción de datos -->
-                    <form action="buscar2.php" class="form-group" method="post">
+                    <!-- Formulario de insercion de datos -->
+                    <form action="buscar_2.php" class="form-group" method="post">
 
                         <!-- Campos necesarios -->
                         <div class="form-group">
@@ -33,22 +38,20 @@ include "../includes/header.php";
                             <input type="number" name="n2" id="n2" class="form-control" min="0" max="9999999999" required>
                         </div>
 
-
-                            </select>
-                        </div>
-
-                        <!-- Botón de envío -->
+                        <!-- Boton de envio -->
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Consultar">
                         </div>
-                    </form>
                 </div>
+
+                </form>
             </div>
         </div>
-
-        
-
     </div>
+
+
+
+</div>
 </div>
 
 

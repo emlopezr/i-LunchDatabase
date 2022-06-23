@@ -12,14 +12,14 @@ require "../funciones/select.php";
         <div class="col-3 px-2">
             <!-- Contenedor -->
             <div class="card">
-                <!-- Título del contenedor -->
+                <!-- Titulo del contenedor -->
                 <div class="card-header">
                     <b>Crear una Franquicia</b>
                 </div>
 
                 <!-- Cuerpo del contenedor -->
                 <div class="card-body">
-                    <!-- Formulario de inserción de datos -->
+                    <!-- Formulario de insercion de datos -->
                     <form action="insert_franquicia.php" class="form-group" method="post">
 
                         <!-- Campos necesarios -->
@@ -34,12 +34,12 @@ require "../funciones/select.php";
                         </div>
 
                         <div class="form-group">
-                            <label for="correo">Correo electrónico</label>
+                            <label for="correo">Correo electronico</label>
                             <input type="email" name="correo" id="correo" class="form-control" maxlength="50" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
+                            <label for="telefono">Telefono</label>
                             <input type="number" name="telefono" id="correo" class="form-control" min="0" max="999999999" required>
                         </div>
 
@@ -81,7 +81,7 @@ require "../funciones/select.php";
                             </select>
                         </div>
 
-                        <!-- Botón de envío -->
+                        <!-- Boton de envio -->
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary" value="Crear">
                         </div>
@@ -100,9 +100,9 @@ require "../funciones/select.php";
                         <th scope="col">NIT</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Correo</th>
-                        <th scope="col">Teléfono</th>
+                        <th scope="col">Telefono</th>
                         <th scope="col">Costo [$USD]</th>
-                        <th scope="col">Valoración comercial</th>
+                        <th scope="col">Valoracion comercial</th>
                         <th scope="col">Administrador</th>
                     </tr>
                 </thead>
@@ -137,7 +137,7 @@ require "../funciones/select.php";
                                     endforeach;
                                     ?>
                                 <?php else: ?>
-                                    <!-- Imprimir vacío si no hay admin -->
+                                    <!-- Imprimir vacio si no hay admin -->
                                     <td></td>
 
                                 <?php endif; ?>

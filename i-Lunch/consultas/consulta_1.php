@@ -33,7 +33,7 @@ mysqli_close($conn);
 
         <div class="col-4 px-2">
             <h2>Consulta 1</h2>
-            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a 500, la franquicia es dueña de mas de 2 restaurantes y el administrador que gestiona la franquicia no gestiona ningun restaurante.</p>
+            <p class="text-justify">Sea CostoTotal la suma de todos los costos de los restaurantes asociados a una franquicia. Se muestra el NIT y el nombre de las franquicias las cuales su CostoTotal es mayor a USD $500M, la franquicia es dueña de mas de 2 restaurantes y el administrador que gestiona la franquicia no gestiona ningun restaurante.</p>
             <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
         </div>
 

@@ -4,7 +4,7 @@ Instrucciones de uso:
    > En caso de utilizar otros servicios similares a WAMP server, estas instrucciones
      pueden variar un poco, por lo que recomendamos utilizar este servicio en específico
 
-3. Copiar la carpeta " i-Lunch" a la carpeta "WWW" que se encuentra en la carpeta donde
+3. Copiar toda la carpeta "BD12022-1_TrabajoFinal/i-Lunch" a la carpeta "WWW" que se encuentra en la carpeta donde
    esta instalado el WAMP Server.
 
 4. Crear un usuario y una base de datos en MySQL desde PHPMyAdmin.

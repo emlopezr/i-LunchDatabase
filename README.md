@@ -5,7 +5,7 @@
 - **Semestre:** 2022-1
 
 ## Equipo de trabajo
-- Andres Felipe Aparicio Mestre - [anapariciom@unal.edu.co](mailto:anapariciom@unal.edu.co)
+- Andrés Felipe Aparicio Mestre - [anapariciom@unal.edu.co](mailto:anapariciom@unal.edu.co)
 - David Esteban Toro Arango - [datoro@unal.edu.co](mailto:datoro@unal.edu.co)
 - Emmanuel López Rodríguez - [emlopezr@unal.edu.co](mailto:emlopezr@unal.edu.co)
 

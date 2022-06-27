@@ -61,6 +61,8 @@ include "includes/header.php";
 
         <div class="col-5 px2">
             <h2>Busqueda 1</h2>
+            <p class="text-justify">El usuario ingresa dos fechas f1 y f2 (cada fecha con día, mes y año), f2 ≥ f1 y un número entero n, n ≥ 0. Se muestra la cédula y el telefono de todos los administradores que han sido gestores de exactamente n restaurantes que han abierto en dicho rango de fechas [f1, f2].</p>
+            <a href="busquedas/busqueda_1.php" class="btn btn-primary">Realizar busqueda</a>
         </div>
 
         <div class="col-5 px2">

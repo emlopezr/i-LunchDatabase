@@ -2,13 +2,13 @@ Instrucciones de uso:
 
 1. Instalar WAMP Server, ejecutarlo y verificar que todos los servicios esten activos.
    > En caso de utilizar otros servicios similares a WAMP server, estas instrucciones
-     pueden variar un poco, por lo que recomendamos utilizar este servicio en específico
+     pueden variar un poco, por lo que recomendamos utilizar este servicio en especifico
 
 3. Copiar toda la carpeta "BD12022-1_TrabajoFinal/i-Lunch" a la carpeta "WWW" que se encuentra en la carpeta donde
    esta instalado el WAMP Server.
 
 4. Crear un usuario y una base de datos en MySQL desde PHPMyAdmin.
-   > En nuestro caso usamos el usuario "root" con la contraseña "admin".
+   > En nuestro caso usamos el usuario "root" con la contraseña vacía ("").
 
 5. Actualizar el archivo "configuraciones/conexion.php" con los datos de su usuario y la
    base de datos.

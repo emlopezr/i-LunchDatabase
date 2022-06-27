@@ -8,9 +8,9 @@ include "../includes/header.php";
         <div class="col-1 px2"></div>
 
         <div class="col-4 px-2">
-            <h2>Busqueda 2</h2>
-            <p class="text-justify">El usuario ingresa dos fechas f1 y f2 (cada fecha con día, mes y año), f2 ≥ f1 y un número entero n, n ≥ 0. Se muestra la cédula y el telefono de todos los administradores que han sido gestores de exactamente n restaurantes que han abierto en dicho rango de fechas [f1, f2].</p>
-                    <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
+            <h2>Busqueda 1</h2>
+            <p class="text-justify">El usuario ingresa dos fechas F1 y F2 y un número entero N. Se cumple que F1 ≤ F2 y 0 ≤ N. Se muestran los nombres y el telefono de todos los administradores que son gestores de exactamente N restaurantes y dichos restaurantes han abierto el rango de fechas [F1, F2].</p>
+            <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
         </div>
 
         <!-- Recibir los datos e insertarlos en la BD-->
@@ -53,9 +53,6 @@ include "../includes/header.php";
             </div>
         </div>
     </div>
-
-
-
 </div>
 </div>
 

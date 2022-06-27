@@ -61,13 +61,13 @@ include "includes/header.php";
 
         <div class="col-5 px2">
             <h2>Busqueda 1</h2>
-            <p class="text-justify">El usuario ingresa dos fechas f1 y f2 (cada fecha con día, mes y año), f2 ≥ f1 y un número entero n, n ≥ 0. Se muestra la cédula y el telefono de todos los administradores que han sido gestores de exactamente n restaurantes que han abierto en dicho rango de fechas [f1, f2].</p>
+            <p class="text-justify">El usuario ingresa dos fechas F1 y F2 y un número entero N. Se cumple que F1 ≤ F2 y 0 ≤ N. Se muestran los nombres y el telefono de todos los administradores que son gestores de exactamente N restaurantes y dichos restaurantes han abierto el rango de fechas [F1, F2].</p>
             <a href="busquedas/busqueda_1.php" class="btn btn-primary">Realizar busqueda</a>
         </div>
 
         <div class="col-5 px2">
             <h2>Busqueda 2</h2>
-            <p class="text-justify">El usuario ingresa dos numeros enteros N1 y N2. Se cumple que 0 ≤ N1 < N2. Se muestra el NIT y el nombre de todas las franquicias que son dueñas de entre N1 y N2 restaurantes (Intervalo cerrado [N1, N2]).</p>
+            <p class="text-justify">El usuario ingresa dos numeros enteros N1 y N2. Se cumple que 0 ≤ N1 < N2. Se muestra el NIT y el nombre de todas las franquicias que son dueñas de entre N1 y N2 restaurantes [N1, N2]. <br> &#8203;</p>
             <a href="busquedas/busqueda_2.php" class="btn btn-primary">Realizar busqueda</a>
         </div>
     </div>

@@ -10,7 +10,7 @@ include "../includes/header.php";
         <div class="col-4 px-2">
             <h2>Busqueda 2</h2>
             <p class="text-justify">El usuario ingresa dos numeros enteros N1 y N2. Se cumple que 0 ≤ N1 < N2. Se muestra el NIT y el nombre de todas las franquicias que son dueñas de entre N1 y N2 restaurantes (Intervalo cerrado [N1, N2]).</p>
-                    <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
+            <a href="../index.php" class="btn btn-primary">Regresar a la pagina principal</a>
         </div>
 
         <!-- Recibir los datos e insertarlos en la BD-->

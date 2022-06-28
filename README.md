@@ -1,4 +1,4 @@
-# Trabajo final BD1: i-Lunch
+# Trabajo final BD: i-Lunch
 - **Materia:** Bases de Datos I
 - **Profesor:** Francisco Javier Moreno Arboleda
 - **Institución:** Universidad Nacional de Colombia sede Medellín
